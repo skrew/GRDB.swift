@@ -9,7 +9,7 @@ class DatabaseErrorTests: GRDBTestCase {
     
     func testDatabaseErrorMessage() {
         // Error messages are not always available
-        if #available(iOS 8.2, OSX 10.10, OSXApplicationExtension 10.10, iOSApplicationExtension 8.2, *) {
+        if #available(iOS 8.2, OSX 10.10, OSXApplicationExtension 10.10, iOSApplicationExtension 8.2, tvOS 12.0, *) {
             // We don't test for actual messages, since they may depend on SQLite version
             XCTAssertEqual(DatabaseError().resultCode, .SQLITE_ERROR)
             XCTAssertNotNil(DatabaseError().message)

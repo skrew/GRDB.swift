@@ -59,7 +59,7 @@ public class Statement {
         let code = sqlite3_prepare_v3(database.sqliteConnection, statementStart, -1, UInt32(bitPattern: prepFlags), &sqliteStatement, statementEnd)
         #else
         let code: Int32
-        if #available(iOS 12.0, OSX 10.14, watchOS 5.0, *) {
+        if #available(iOS 12.0, OSX 10.14, watchOS 5.0, tvOS 12.0, *) {
             code = sqlite3_prepare_v3(database.sqliteConnection, statementStart, -1, UInt32(bitPattern: prepFlags), &sqliteStatement, statementEnd)
         } else {
             code = sqlite3_prepare_v2(database.sqliteConnection, statementStart, -1, &sqliteStatement, statementEnd)

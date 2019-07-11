@@ -28,7 +28,7 @@ class TableDefinitionTests: GRDBTestCase {
     func testTableCreationOptions() throws {
         let dbQueue = try makeDatabaseQueue()
         try dbQueue.inDatabase { db in
-            if #available(iOS 8.2, OSX 10.10, *) {
+            if #available(iOS 8.2, OSX 10.10, tvOS 12.0, *) {
                 try db.create(table: "test", temporary: true, ifNotExists: true, withoutRowID: true) { t in
                     t.column("id", .integer).primaryKey()
                 }

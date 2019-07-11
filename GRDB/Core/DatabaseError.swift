@@ -149,7 +149,7 @@ extension ResultCode {
         #if GRDBCUSTOMSQLITE || GRDBCIPHER
             return String(cString: sqlite3_errstr(rawValue))
         #else
-            if #available(iOS 8.2, OSX 10.10, OSXApplicationExtension 10.10, *) {
+            if #available(iOS 8.2, OSX 10.10, OSXApplicationExtension 10.10, tvOS 12.0, *) {
                 return String(cString: sqlite3_errstr(rawValue))
             } else {
                 return nil
