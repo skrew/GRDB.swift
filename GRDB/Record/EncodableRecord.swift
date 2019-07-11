@@ -129,7 +129,7 @@ extension EncodableRecord {
         encoder.dataEncodingStrategy = .base64
         encoder.dateEncodingStrategy = .millisecondsSince1970
         encoder.nonConformingFloatEncodingStrategy = .throw
-        if #available(watchOS 4.0, OSX 10.13, iOS 11.0, *) {
+        if #available(watchOS 4.0, OSX 10.13, iOS 11.0, tvOS 12.0, *) {
             // guarantee some stability in order to ease record comparison
             encoder.outputFormatting = .sortedKeys
         }
